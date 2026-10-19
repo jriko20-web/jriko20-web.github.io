@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidade — GPS Bússola</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #0b0f19;
+        }
+        .container {
+            background: #131b2e;
+            padding: 32px;
+            border-radius: 16px;
+            border: 1px solid #1e293b;
+            color: #e2e8f0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+        }
+        h1 {
+            color: #00E5FF;
+            font-size: 24px;
+            border-bottom: 2px solid #00E5FF;
+            padding-bottom: 12px;
+            margin-top: 0;
+        }
+        h3 {
+            color: #38bdf8;
+            margin-top: 26px;
+            font-size: 18px;
+        }
+        p, li {
+            font-size: 14.5px;
+            color: #cbd5e1;
+        }
+        hr {
+            border: 0;
+            height: 1px;
+            background: #1e293b;
+            margin: 24px 0;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        a {
+            color: #00E5FF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .contact-box {
+            background: #0f172a;
+            padding: 16px 20px;
+            border-radius: 10px;
+            border-left: 4px solid #00E5FF;
+            margin-top: 16px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Política de Privacidade — GPS Bússola</h1>
+    <p><strong>Última atualização:</strong> Outubro de 2026</p>
+    <p>Esta Política de Privacidade descreve de forma transparente como o aplicativo <strong>GPS Bússola</strong> trata as informações coletadas e processadas durante sua utilização, em estrita conformidade com a Lei Geral de Proteção de Dados Pessoais (LGPD - Lei nº 13.709/2018), o Regulamento Geral sobre a Proteção de Dados (GDPR) e os requisitos de segurança e privacidade da Google Play Store.</p>
+
+    <hr>
+    <h3>1. Dados de Localização e GNSS (Privacidade e Armazenamento Local)</h3>
+    <p>O <strong>GPS Bússola</strong> é uma ferramenta de navegação terrestre e orientação em tempo real voltada para uso seguro, inclusive em ambientes desconectados (off-grid):</p>
+    <ul>
+        <li><strong>Localização em Primeiro Plano (Foreground):</strong> Acesso a dados precisos de latitude, longitude, altitude e velocidade via chip GNSS estritamente enquanto o aplicativo está ativo na tela.</li>
+        <li><strong>Gravação de Trilhas (Foreground Service):</strong> A captura de coordenadas com a tela desligada ou app minimizado é executada unicamente quando o usuário aciona voluntariamente a gravação de percurso, exibindo uma notificação permanente e visível no sistema. Não há rastreamento oculto em segundo plano.</li>
+        <li><strong>Soberania e Armazenamento Local:</strong> Todos os waypoints cadastrados, rotas e histórico de telemetria permanecem armazenados unicamente no banco de dados local do seu aparelho (Room Database). Nenhum dado geográfico é coletado, vendido ou compartilhado com servidores externos.</li>
+    </ul>
+
+    <hr>
+    <h3>2. Sensores Inerciais e Barométricos</h3>
+    <p>O aplicativo realiza a leitura de sensores locais do dispositivo (magnetômetro, acelerômetro, giroscópio e barômetro piezoelétrico) para fins exclusivos de amortecimento da rosa dos ventos, cálculo de inclinação (roll/pitch) e estimativa de altitude barométrica (QNH). As leituras inerciais são processadas em tempo real e nunca são exportadas externamente.</p>
+
+    <hr>
+    <h3>3. Comunicação P2P Mesh Off-Grid (Nearby Connections)</h3>
+    <p>Para o módulo de <strong>Chat SOS e Balizas de Emergência Offline</strong>:</p>
+    <ul>
+        <li>A conexão utiliza radiofrequência local direta (Bluetooth e Wi-Fi Direct) sem intervenção da internet.</li>
+        <li>As conexões exigem confirmação mútua via código de autenticação (handshake de segurança) para prevenir conexões não solicitadas.</li>
+        <li>Coordenadas transmitidas no botão de SOS são destinadas exclusivamente aos aparelhos que você aceitou conectar na proximidade geográfica.</li>
+    </ul>
+
+    <hr>
+    <h3>4. Serviços Cartográficos e Meteorologia</h3>
+    <ul>
+        <li><strong>Esri ArcGIS:</strong> Exibição de camadas cartográficas (World Topo Map, World Imagery e Hillshade 3D). As requisições de blocos de mapa baixam tiles diretamente dos servidores da Esri utilizando conexões seguras (HTTPS).</li>
+        <li><strong>Open-Meteo & WAQI:</strong> Consultas pontuais e anônimas de previsão meteorológica, marés astronômicas e índice de qualidade do ar (IQAr CONAMA 491/2018). As consultas não carregam identificadores de perfil do usuário.</li>
+    </ul>
+
+    <hr>
+    <h3>5. Monetização e Publicidade (Google AdMob & UMP)</h3>
+    <p>O aplicativo integra o Google Mobile Ads SDK com políticas éticas estritas de exibição:</p>
+    <ul>
+        <li><strong>Áreas Críticas Livres de Anúncios:</strong> As telas operacionais da <strong>Bússola</strong> e do <strong>Mapa</strong> são 100% livres de anúncios publicitários para não obstruir a navegação.</li>
+        <li><strong>Consentimento do Usuário (Google UMP):</strong> A coleta de preferências para anúncios é gerenciada pelo formulário oficial da Google User Messaging Platform (UMP), permitindo a revogação ou ajuste de consentimento a qualquer momento.</li>
+    </ul>
+
+    <hr>
+    <h3>6. Encarregado pelo Tratamento de Dados (DPO) e Contato</h3>
+    <p>Para esclarecer dúvidas sobre esta política, exercer seus direitos previstos pela LGPD ou solicitar esclarecimentos técnicos sobre os dados locais da aplicação, entre em contato direto com o desenvolvedor responsável:</p>
+    
+    <div class="contact-box">
+        <p><strong>Desenvolvedor / Responsável:</strong> Jorge Henrique</p>
+        <p><strong>E-mail de Contato:</strong> <a href="mailto:jorgehenrique2386@gmail.com">jorgehenrique2386@gmail.com</a></p>
+        <p><strong>Localidade:</strong> Rio de Janeiro - RJ, Brasil</p>
+    </div>
+</div>
+</body>
+</html>
