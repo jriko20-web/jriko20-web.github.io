@@ -3,121 +3,295 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Política de Privacidade — GPS Bússola</title>
+    <title>Política de Privacidade / Privacy Policy — GPS Bússola</title>
     <style>
+        :root {
+            --bg-color: #0b0f19;
+            --surface-color: #131b2e;
+            --border-color: #1e293b;
+            --primary-color: #00E5FF;
+            --accent-green: #10B981;
+            --accent-amber: #F59E0B;
+            --text-main: #e2e8f0;
+            --text-muted: #94a3b8;
+        }
+        * { box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
-            color: #1e293b;
-            max-width: 800px;
+            color: var(--text-main);
+            max-width: 900px;
             margin: 0 auto;
-            padding: 20px;
-            background-color: #0b0f19;
+            padding: 24px 16px;
+            background-color: var(--bg-color);
         }
         .container {
-            background: #131b2e;
-            padding: 32px;
+            background: var(--surface-color);
+            padding: 32px 28px;
             border-radius: 16px;
-            border: 1px solid #1e293b;
-            color: #e2e8f0;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+        }
+        .lang-switch {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 14px;
+        }
+        .lang-btn {
+            background: #0f172a;
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .lang-btn.active {
+            background: var(--primary-color);
+            color: #000;
+            border-color: var(--primary-color);
         }
         h1 {
-            color: #00E5FF;
+            color: var(--primary-color);
             font-size: 24px;
-            border-bottom: 2px solid #00E5FF;
-            padding-bottom: 12px;
             margin-top: 0;
+            margin-bottom: 8px;
         }
-        h3 {
+        h2 {
             color: #38bdf8;
-            margin-top: 26px;
             font-size: 18px;
+            margin-top: 28px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 6px;
         }
         p, li {
             font-size: 14.5px;
             color: #cbd5e1;
         }
-        hr {
-            border: 0;
-            height: 1px;
-            background: #1e293b;
-            margin: 24px 0;
+        ul { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        .disclaimer-box {
+            background: #2a1215;
+            border-left: 4px solid #ef4444;
+            padding: 14px 18px;
+            border-radius: 8px;
+            margin: 18px 0;
+            font-size: 13.5px;
+            color: #fecaca;
         }
-        ul {
-            padding-left: 20px;
-        }
-        li {
-            margin-bottom: 8px;
-        }
-        a {
-            color: #00E5FF;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .contact-box {
+        .info-card {
             background: #0f172a;
+            border-left: 4px solid var(--primary-color);
             padding: 16px 20px;
-            border-radius: 10px;
-            border-left: 4px solid #00E5FF;
-            margin-top: 16px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        a { color: var(--primary-color); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .meta-tag {
+            display: inline-block;
+            background: #1e293b;
+            color: var(--primary-color);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-family: monospace;
+            margin-bottom: 12px;
         }
     </style>
 </head>
 <body>
 <div class="container">
-    <h1>Política de Privacidade — GPS Bússola</h1>
-    <p><strong>Última atualização:</strong> Outubro de 2026</p>
-    <p>Esta Política de Privacidade descreve de forma transparente como o aplicativo <strong>GPS Bússola</strong> trata as informações coletadas e processadas durante sua utilização, em estrita conformidade com a Lei Geral de Proteção de Dados Pessoais (LGPD - Lei nº 13.709/2018), o Regulamento Geral sobre a Proteção de Dados (GDPR) e os requisitos de segurança e privacidade da Google Play Store.</p>
+    <div class="lang-switch">
+        <button class="lang-btn active" onclick="switchLang('pt')">Português (BR)</button>
+        <button class="lang-btn" onclick="switchLang('en')">English</button>
+        <button class="lang-btn" onclick="switchLang('es')">Español</button>
+    </div>
 
-    <hr>
-    <h3>1. Dados de Localização e GNSS (Privacidade e Armazenamento Local)</h3>
-    <p>O <strong>GPS Bússola</strong> é uma ferramenta de navegação terrestre e orientação em tempo real voltada para uso seguro, inclusive em ambientes desconectados (off-grid):</p>
-    <ul>
-        <li><strong>Localização em Primeiro Plano (Foreground):</strong> Acesso a dados precisos de latitude, longitude, altitude e velocidade via chip GNSS estritamente enquanto o aplicativo está ativo na tela.</li>
-        <li><strong>Gravação de Trilhas (Foreground Service):</strong> A captura de coordenadas com a tela desligada ou app minimizado é executada unicamente quando o usuário aciona voluntariamente a gravação de percurso, exibindo uma notificação permanente e visível no sistema. Não há rastreamento oculto em segundo plano.</li>
-        <li><strong>Soberania e Armazenamento Local:</strong> Todos os waypoints cadastrados, rotas e histórico de telemetria permanecem armazenados unicamente no banco de dados local do seu aparelho (Room Database). Nenhum dado geográfico é coletado, vendido ou compartilhado com servidores externos.</li>
-    </ul>
+    <!-- CONTEÚDO EM PORTUGUÊS -->
+    <div id="content-pt" class="tab-content active">
+        <h1>Política de Privacidade — GPS Bússola</h1>
+        <span class="meta-tag">Última atualização: Outubro de 2026</span>
+        <p>Esta Política de Privacidade descreve de forma transparente o tratamento de dados realizado pelo aplicativo <strong>GPS Bússola</strong>, em total conformidade com a Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018), o Regulamento Geral de Proteção de Dados da União Europeia (GDPR) e as diretrizes da Google Play Store.</p>
 
-    <hr>
-    <h3>2. Sensores Inerciais e Barométricos</h3>
-    <p>O aplicativo realiza a leitura de sensores locais do dispositivo (magnetômetro, acelerômetro, giroscópio e barômetro piezoelétrico) para fins exclusivos de amortecimento da rosa dos ventos, cálculo de inclinação (roll/pitch) e estimativa de altitude barométrica (QNH). As leituras inerciais são processadas em tempo real e nunca são exportadas externamente.</p>
+        <div class="disclaimer-box">
+            <strong>Aviso de Salvaguarda e Emergência:</strong> O aplicativo disponibiliza funções de bússola, cálculo solar, telemetria GNSS e balizas de emergência P2P off-grid. Estas ferramentas são apoios auxiliares à orientação esportiva e de expedição, <strong>não substituindo</strong> equipamentos homologados de navegação nem os canais oficiais de emergência e resgate (Corpo de Bombeiros, Defesa Civil ou canais de rádio socorro).
+        </div>
 
-    <hr>
-    <h3>3. Comunicação P2P Mesh Off-Grid (Nearby Connections)</h3>
-    <p>Para o módulo de <strong>Chat SOS e Balizas de Emergência Offline</strong>:</p>
-    <ul>
-        <li>A conexão utiliza radiofrequência local direta (Bluetooth e Wi-Fi Direct) sem intervenção da internet.</li>
-        <li>As conexões exigem confirmação mútua via código de autenticação (handshake de segurança) para prevenir conexões não solicitadas.</li>
-        <li>Coordenadas transmitidas no botão de SOS são destinadas exclusivamente aos aparelhos que você aceitou conectar na proximidade geográfica.</li>
-    </ul>
+        <h2>1. Dados Geográficos e Localização (GPS / GNSS)</h2>
+        <ul>
+            <li><strong>Localização em Primeiro Plano:</strong> As suas coordenadas precisas (latitude, longitude, altitude e rumo) são lidas pelo chip GNSS estritamente quando a aplicação está aberta no ecrã para permitir a orientação na rosa dos ventos e no mapa.</li>
+            <li><strong>Gravação de Trilhas (Serviço em Primeiro Plano):</strong> Caso inicie voluntariamente a gravação de um percurso, o aplicativo continua a registar os pontos mesmo com o ecrã bloqueado, mantendo uma <strong>notificação persistente e visível</strong> na barra de estado do sistema, sem qualquer recolha oculta em segundo plano.</li>
+            <li><strong>Armazenamento Local Primário:</strong> Todos os waypoints cadastrados, notas e registos de percursos permanecem armazenados unicamente no banco de dados local do seu dispositivo (Room SQLite), sem envio de histórico pessoal para bases de dados proprietárias.</li>
+        </ul>
 
-    <hr>
-    <h3>4. Serviços Cartográficos e Meteorologia</h3>
-    <ul>
-        <li><strong>Esri ArcGIS:</strong> Exibição de camadas cartográficas (World Topo Map, World Imagery e Hillshade 3D). As requisições de blocos de mapa baixam tiles diretamente dos servidores da Esri utilizando conexões seguras (HTTPS).</li>
-        <li><strong>Open-Meteo & WAQI:</strong> Consultas pontuais e anônimas de previsão meteorológica, marés astronômicas e índice de qualidade do ar (IQAr CONAMA 491/2018). As consultas não carregam identificadores de perfil do usuário.</li>
-    </ul>
+        <h2>2. Transmissão de Coordenadas e Endereço IP a Serviços Terceiros</h2>
+        <p>Para fornecer funcionalidades em tempo real, o aplicativo realiza requisições HTTPS diretas a serviços especializados, transmitindo as coordenadas do local visualizado e o endereço IP da conexão:</p>
+        <ul>
+            <li><strong>Esri ArcGIS Location Platform:</strong> Descarregamento de blocos cartográficos de alta definição (World Topo Map, World Imagery e relevo sombreado Hillshade 3D).</li>
+            <li><strong>Open-Meteo:</strong> Consulta de previsões meteorológicas horárias, ondulação oceânica, modelo de elevação Copernicus DEM (30m) e ferramenta de busca textual de localidades.</li>
+            <li><strong>World Air Quality Index (WAQI / AQICN):</strong> Validação cruzada do índice de qualidade do ar com sensores de solo mais próximos.</li>
+            <li><strong>Nominatim / OpenStreetMap:</strong> Geocodificação reversa para conversão das coordenadas geográficas no nome do bairro ou município correspondente.</li>
+            <li><strong>AviationWeather.gov (NOAA / NWS):</strong> Consulta mundial de boletins meteorológicos aeronáuticos oficiais (METAR).</li>
+            <li><strong>NOAA Space Weather Prediction Center (SWPC):</strong> Consulta de tempestades geomagnéticas solares (índice Kp planetário e vento solar).</li>
+        </ul>
 
-    <hr>
-    <h3>5. Monetização e Publicidade (Google AdMob & UMP)</h3>
-    <p>O aplicativo integra o Google Mobile Ads SDK com políticas éticas estritas de exibição:</p>
-    <ul>
-        <li><strong>Áreas Críticas Livres de Anúncios:</strong> As telas operacionais da <strong>Bússola</strong> e do <strong>Mapa</strong> são 100% livres de anúncios publicitários para não obstruir a navegação.</li>
-        <li><strong>Consentimento do Usuário (Google UMP):</strong> A coleta de preferências para anúncios é gerenciada pelo formulário oficial da Google User Messaging Platform (UMP), permitindo a revogação ou ajuste de consentimento a qualquer momento.</li>
-    </ul>
+        <h2>3. Publicidade, Monetização e Consentimento (Google AdMob e UMP)</h2>
+        <p>O aplicativo utiliza o <strong>Google AdMob</strong> para a exibição de anúncios:</p>
+        <ul>
+            <li><strong>Dados Tratados pela Rede de Anúncios:</strong> O Google AdMob recolhe e processa o Identificador de Publicidade do dispositivo (GAID), endereço IP, dados técnicos de diagnóstico e interação com anúncios para fins de prevenção de fraudes e medição.</li>
+            <li><strong>Formulário de Consentimento (Google UMP):</strong> Em regiões reguladas (como o EEE e Reino Unido), as preferências de privacidade e anúncios personalizados são recolhidas pelo formulário oficial da Google. O utilizador pode rever ou alterar o seu consentimento a qualquer momento acedendo a <em>Configurações &gt; Opções de Privacidade</em> dentro da aplicação.</li>
+            <li><strong>Exibição Controlada:</strong> As telas da Bússola e do Mapa são isentas de banners fixos, reservando-se banners para a tela de itens salvos e anúncios de tela cheia (intersticiais) disparados com limitação de intervalo após a finalização de trilhas.</li>
+        </ul>
 
-    <hr>
-    <h3>6. Encarregado pelo Tratamento de Dados (DPO) e Contato</h3>
-    <p>Para esclarecer dúvidas sobre esta política, exercer seus direitos previstos pela LGPD ou solicitar esclarecimentos técnicos sobre os dados locais da aplicação, entre em contato direto com o desenvolvedor responsável:</p>
-    
-    <div class="contact-box">
-        <p><strong>Desenvolvedor / Responsável:</strong> Jorge Henrique</p>
-        <p><strong>E-mail de Contato:</strong> <a href="mailto:jorgehenrique2386@gmail.com">jorgehenrique2386@gmail.com</a></p>
-        <p><strong>Localidade:</strong> Rio de Janeiro - RJ, Brasil</p>
+        <h2>4. Comunicação Offline P2P (Rede Mesh de Proximidade)</h2>
+        <p>O recurso de <strong>Chat SOS Offline</strong> utiliza o <em>Google Nearby Connections</em> por meio de rádio local (Bluetooth e Wi-Fi Direct):</p>
+        <ul>
+            <li>A comunicação é feita de dispositivo para dispositivo, sem depender de conexão com a internet.</li>
+            <li>Nenhum nó desconhecido é conectado sem o prévio handshake de autenticação e validação manual do código de emparelhamento pelo utilizador.</li>
+        </ul>
+
+        <h2>5. Bases Legais, Retenção e Direitos do Titular (LGPD / GDPR)</h2>
+        <ul>
+            <li><strong>Bases Legais:</strong> O tratamento de dados de localização baseia-se na <em>execução de contrato / prestação do serviço solicitado</em> pelo próprio utilizador. O tratamento de dados de publicidade baseia-se no <em>consentimento</em> prévio.</li>
+            <li><strong>Retenção dos Dados:</strong> Os seus percursos e waypoints são retidos localmente até que decida eliminá-los manualmente através da aplicação ou desinstalá-la.</li>
+            <li><strong>Direitos do Titular:</strong> O utilizador tem direito de acesso, correção, eliminação de dados locais e revogação de consentimento de anúncios a qualquer momento.</li>
+            <li><strong>Transferência Internacional:</strong> Os servidores dos serviços terceiros de meteorologia, mapas e anúncios encontram-se situados fora do território nacional (EUA e Europa), aplicando-se padrões técnicos seguros de encriptação TLS/HTTPS.</li>
+        </ul>
+
+        <h2>6. Proteção de Menores</h2>
+        <p>Esta aplicação não é direcionada a crianças e não recolhe intencionalmente informações de menores de 13 anos.</p>
+
+        <h2>7. Contato do Encarregado / Desenvolvedor</h2>
+        <div class="info-card">
+            <p><strong>Desenvolvedor Responsável:</strong> Jorge Henrique</p>
+            <p><strong>Localidade:</strong> Rio de Janeiro - RJ, Brasil</p>
+            <p><strong>E-mail de Atendimento e Privacidade:</strong> <a href="mailto:jorgehenrique2386@gmail.com">jorgehenrique2386@gmail.com</a></p>
+        </div>
+    </div>
+
+    <!-- CONTEÚDO EM INGLÊS -->
+    <div id="content-en" class="tab-content">
+        <h1>Privacy Policy — GPS Bússola</h1>
+        <span class="meta-tag">Last updated: October 2026</span>
+        <p>This Privacy Policy describes how <strong>GPS Bússola</strong> handles user data, in strict compliance with the General Data Protection Law (LGPD - Brazil), the European General Data Protection Regulation (GDPR), and Google Play Store Developer Policies.</p>
+
+        <div class="disclaimer-box">
+            <strong>Emergency & Safety Disclaimer:</strong> This app provides compass navigation, solar calculations, GNSS telemetry, and offline P2P emergency beacons. These tools are secondary outdoor navigation aids and <strong>do not replace</strong> certified navigation equipment or official search and rescue channels.
+        </div>
+
+        <h2>1. Geographical Data & Location (GPS / GNSS)</h2>
+        <ul>
+            <li><strong>Foreground Location:</strong> High-precision coordinates (latitude, longitude, altitude, and bearing) are accessed strictly while the app is active on screen for compass and mapping functions.</li>
+            <li><strong>Track Recording (Foreground Service):</strong> When recording trails, the app utilizes an active foreground service with a <strong>continuous and visible notification</strong> in the status bar, preventing hidden background tracking.</li>
+            <li><strong>Local Sovereignty:</strong> Waypoints, notes, and recorded track points are saved locally in the device's Room SQLite database and are never uploaded to proprietary servers.</li>
+        </ul>
+
+        <h2>2. External Services & IP / Coordinate Transmission</h2>
+        <p>To deliver real-time features, the app sends location coordinates and device IP addresses via secure HTTPS requests to specialized third-party providers:</p>
+        <ul>
+            <li><strong>Esri ArcGIS Location Platform:</strong> Cartographic tile rendering (World Topo, World Imagery, and 3D Hillshade).</li>
+            <li><strong>Open-Meteo:</strong> Hourly weather forecasts, marine waves, Copernicus DEM 30m terrain elevations, and geocoding search.</li>
+            <li><strong>World Air Quality Index (WAQI / AQICN):</strong> Air quality ground-station validation.</li>
+            <li><strong>Nominatim / OpenStreetMap:</strong> Reverse geocoding to resolve neighborhood and city names.</li>
+            <li><strong>AviationWeather.gov (NOAA / NWS):</strong> Official aviation weather reports (METAR).</li>
+            <li><strong>NOAA SWPC:</strong> Space weather and planetary Kp geomagnetic disturbance indices.</li>
+        </ul>
+
+        <h2>3. Advertising & Consent (Google AdMob and UMP)</h2>
+        <ul>
+            <li><strong>Data Handled:</strong> Google AdMob processes advertising IDs (GAID), IP addresses, and app diagnostics for ad delivery and fraud prevention.</li>
+            <li><strong>Consent Management:</strong> Users in regulated areas (such as EEA and UK) can review or revoke ad consent at any time via <em>Settings &gt; Privacy Options</em>.</li>
+            <li><strong>Ad Placement:</strong> Compass and Map screens are kept clean of fixed banners. Interstitial ads occur on a strict cooldown after completing track recordings.</li>
+        </ul>
+
+        <h2>4. Offline Mesh Communication (P2P)</h2>
+        <p>The <strong>Offline SOS Chat</strong> operates via <em>Google Nearby Connections</em> using local radios (Bluetooth and Wi-Fi Direct) without internet dependency. Connections require mutual cryptographic handshake approval.</p>
+
+        <h2>5. Legal Bases, Retention & User Rights</h2>
+        <p>Location data is processed under the legal basis of <em>performance of contract/service requested</em>. Ad data relies on <em>explicit consent</em>. Users can delete their data at any time by clearing the local app database or uninstalling the app.</p>
+
+        <h2>6. Children's Privacy</h2>
+        <p>The app is not directed at children under the age of 13 and does not knowingly collect data from children.</p>
+
+        <h2>7. Contact & Controller</h2>
+        <div class="info-card">
+            <p><strong>Developer:</strong> Jorge Henrique</p>
+            <p><strong>Location:</strong> Rio de Janeiro - RJ, Brazil</p>
+            <p><strong>Privacy Email:</strong> <a href="mailto:jorgehenrique2386@gmail.com">jorgehenrique2386@gmail.com</a></p>
+        </div>
+    </div>
+
+    <!-- CONTEÚDO EM ESPANHOL -->
+    <div id="content-es" class="tab-content">
+        <h1>Política de Privacidad — GPS Bússola</h1>
+        <span class="meta-tag">Última actualización: Octubre de 2026</span>
+        <p>Esta Política de Privacidad describe el tratamiento de datos del aplicativo <strong>GPS Bússola</strong>, de acuerdo con la LGPD brasileña, el Reglamento General de Protección de Datos (GDPR) y las normativas de Google Play Store.</p>
+
+        <div class="disclaimer-box">
+            <strong>Aviso de Seguridad y Emergencia:</strong> Esta aplicación ofrece brújula, cálculo solar, telemetría GNSS y balizas de emergencia P2P sin conexión. Estas herramientas son ayudas auxiliares de orientación y <strong>no sustituyen</strong> a los equipos homologados ni a los servicios oficiales de rescate y emergencias.
+        </div>
+
+        <h2>1. Datos Geográficos y Ubicación (GPS / GNSS)</h2>
+        <ul>
+            <li><strong>Ubicación en Primer Plano:</strong> Las coordenadas (latitud, longitud, altitud y rumbo) se procesan estrictamente mientras la aplicación está visible en pantalla.</li>
+            <li><strong>Grabación de Trayectos (Servicio en Primer Plano):</strong> La grabación continua en segundo plano se realiza mediante un servicio activo con <strong>notificación permanente y visible</strong> en la barra de estado.</li>
+            <li><strong>Almacenamiento Local:</strong> Los waypoints y trayectos se guardan únicamente en la base de datos local del dispositivo (Room SQLite).</li>
+        </ul>
+
+        <h2>2. Transmisión de Coordenadas e IP a Proveedores Externos</h2>
+        <p>Para brindar datos en tiempo real, la aplicación realiza solicitudes HTTPS enviando las coordenadas del lugar consultado y la dirección IP a servicios de terceros:</p>
+        <ul>
+            <li><strong>Esri ArcGIS:</strong> Mapas topográficos, satelitales y relieve sombreado (Hillshade 3D).</li>
+            <li><strong>Open-Meteo:</strong> Pronósticos del tiempo, oleaje, elevación Copernicus DEM y búsqueda de localidades.</li>
+            <li><strong>World Air Quality Index (WAQI):</strong> Validación de la calidad del aire con estaciones terrestres.</li>
+            <li><strong>Nominatim / OpenStreetMap:</strong> Geocodificación inversa para identificar barrios y ciudades.</li>
+            <li><strong>AviationWeather.gov:</strong> Informes meteorológicos aeronáuticos oficiales (METAR).</li>
+            <li><strong>NOAA SWPC:</strong> Clima espacial e índice Kp de tormentas geomagnéticas.</li>
+        </ul>
+
+        <h2>3. Publicidad y Consentimiento (Google AdMob y UMP)</h2>
+        <ul>
+            <li><strong>Datos de Anuncios:</strong> Google AdMob recopila identificadores de publicidad (GAID), IP y diagnósticos de uso.</li>
+            <li><strong>Gestión de Consentimiento:</strong> Los usuarios pueden modificar sus opciones de consentimiento en cualquier momento mediante <em>Configuración &gt; Opciones de Privacidad</em>.</li>
+            <li><strong>Visualización Ética:</strong> Las pantallas de Brújula y Mapa permanecen libres de banners fijos.</li>
+        </ul>
+
+        <h2>4. Comunicación P2P Fuera de Red</h2>
+        <p>El <strong>Chat SOS Offline</strong> utiliza <em>Google Nearby Connections</em> a través de Bluetooth y Wi-Fi Direct sin depender de internet. Requiere confirmación manual mediante código antes de conectar.</p>
+
+        <h2>5. Derechos del Usuario y Retención</h2>
+        <p>Los datos de ubicación se procesan para la <em>ejecución del servicio</em> solicitado. Los datos se conservan en el dispositivo hasta que el usuario decida borrarlos o desinstalar la aplicación.</p>
+
+        <h2>6. Protección de Menores</h2>
+        <p>La aplicación no está destinada a menores de 13 años ni recopila intencionadamente datos de niños.</p>
+
+        <h2>7. Contacto del Desarrollador</h2>
+        <div class="info-card">
+            <p><strong>Desarrollador:</strong> Jorge Henrique</p>
+            <p><strong>Ubicación:</strong> Río de Janeiro - RJ, Brasil</p>
+            <p><strong>Correo de Privacidad:</strong> <a href="mailto:jorgehenrique2386@gmail.com">jorgehenrique2386@gmail.com</a></p>
+        </div>
     </div>
 </div>
+
+<script>
+    function switchLang(lang) {
+        document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
+        
+        const content = document.getElementById('content-' + lang);
+        if (content) content.classList.add('active');
+        
+        const btn = Array.from(document.querySelectorAll('.lang-btn')).find(b => b.getAttribute('onclick').includes(lang));
+        if (btn) btn.classList.add('active');
+    }
+</script>
 </body>
 </html>
