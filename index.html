@@ -3,69 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Política de Privacidade / Privacy Policy — GPS Bússola</title>
+    <title>Política de Privacidade — Bússola GPS</title>
     <style>
         :root {
+            --primary-color: #38bdf8;
             --bg-color: #0b0f19;
-            --surface-color: #131b2e;
-            --border-color: #1e293b;
-            --primary-color: #00E5FF;
-            --accent-green: #10B981;
-            --accent-amber: #F59E0B;
-            --text-main: #e2e8f0;
-            --text-muted: #94a3b8;
+            --card-bg: #1e293b;
+            --text-color: #f1f5f9;
         }
-        * { box-sizing: border-box; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text-main);
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 24px 16px;
             background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 24px 16px;
+            line-height: 1.6;
         }
         .container {
-            background: var(--surface-color);
-            padding: 32px 28px;
-            border-radius: 16px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+            max-width: 800px;
+            margin: 0 auto;
         }
         .lang-switch {
             display: flex;
             gap: 8px;
             margin-bottom: 24px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 14px;
         }
         .lang-btn {
-            background: #0f172a;
-            border: 1px solid var(--border-color);
-            color: var(--text-muted);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 600;
+            background: #1e293b;
+            color: #94a3b8;
+            border: 1px solid #334155;
+            padding: 8px 14px;
+            border-radius: 6px;
             cursor: pointer;
-            transition: all 0.2s ease;
+            font-size: 13px;
+            font-weight: 500;
         }
         .lang-btn.active {
             background: var(--primary-color);
-            color: #000;
+            color: #0f172a;
             border-color: var(--primary-color);
+            font-weight: bold;
         }
         h1 {
-            color: var(--primary-color);
             font-size: 24px;
-            margin-top: 0;
-            margin-bottom: 8px;
+            color: #f8fafc;
+            margin-bottom: 4px;
         }
         h2 {
-            color: #38bdf8;
             font-size: 18px;
-            margin-top: 28px;
-            border-bottom: 1px solid var(--border-color);
+            color: var(--primary-color);
+            margin-top: 24px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #1e293b;
             padding-bottom: 6px;
         }
         p, li {
@@ -116,9 +105,9 @@
 
     <!-- CONTEÚDO EM PORTUGUÊS -->
     <div id="content-pt" class="tab-content active">
-        <h1>Política de Privacidade — GPS Bússola</h1>
+        <h1>Política de Privacidade — Bússola GPS</h1>
         <span class="meta-tag">Última atualização: Outubro de 2026</span>
-        <p>Esta Política de Privacidade descreve de forma transparente o tratamento de dados realizado pelo aplicativo <strong>GPS Bússola</strong>, em total conformidade com a Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018), o Regulamento Geral de Proteção de Dados da União Europeia (GDPR) e as diretrizes da Google Play Store.</p>
+        <p>Esta Política de Privacidade descreve de forma transparente o tratamento de dados realizado pelo aplicativo <strong>Bússola GPS</strong>, em total conformidade com a Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018), o Regulamento Geral de Proteção de Dados da União Europeia (GDPR) e as diretrizes da Google Play Store.</p>
 
         <div class="disclaimer-box">
             <strong>Aviso de Salvaguarda e Emergência:</strong> O aplicativo disponibiliza funções de bússola, cálculo solar, telemetria GNSS e balizas de emergência P2P off-grid. Estas ferramentas são apoios auxiliares à orientação esportiva e de expedição, <strong>não substituindo</strong> equipamentos homologados de navegação nem os canais oficiais de emergência e resgate (Corpo de Bombeiros, Defesa Civil ou canais de rádio socorro).
@@ -135,15 +124,15 @@
         <p>Para fornecer funcionalidades em tempo real, o aplicativo realiza requisições HTTPS diretas a serviços especializados, transmitindo as coordenadas do local visualizado e o endereço IP da conexão:</p>
         <ul>
             <li><strong>Esri ArcGIS Location Platform:</strong> Descarregamento de blocos cartográficos de alta definição (World Topo Map, World Imagery e relevo sombreado Hillshade 3D).</li>
-            <li><strong>Open-Meteo:</strong> Consulta de previsões meteorológicas horárias, ondulação oceânica, modelo de elevação Copernicus DEM (30m) e ferramenta de busca textual de localidades.</li>
+            <li><strong>WeatherAPI.com:</strong> Consulta de condições meteorológicas em tempo real, previsões horárias de temperatura e chuva, e ferramenta de busca textual de municípios.</li>
+            <li><strong>Open-Meteo Elevation API:</strong> Consulta do modelo de radar altimétrico de solo (Copernicus DEM 30m) para validação e calibração de altitude topográfica.</li>
             <li><strong>World Air Quality Index (WAQI / AQICN):</strong> Validação cruzada do índice de qualidade do ar com sensores de solo mais próximos.</li>
             <li><strong>Nominatim / OpenStreetMap:</strong> Geocodificação reversa para conversão das coordenadas geográficas no nome do bairro ou município correspondente.</li>
             <li><strong>AviationWeather.gov (NOAA / NWS):</strong> Consulta mundial de boletins meteorológicos aeronáuticos oficiais (METAR).</li>
-            <li><strong>NOAA Space Weather Prediction Center (SWPC):</strong> Consulta de tempestades geomagnéticas solares (índice Kp planetário e vento solar).</li>
+            <li><strong>NOAA SWPC:</strong> Consulta de tempestades geomagnéticas solares (índice Kp planetário e vento solar).</li>
         </ul>
 
         <h2>3. Publicidade, Monetização e Consentimento (Google AdMob e UMP)</h2>
-        <p>O aplicativo utiliza o <strong>Google AdMob</strong> para a exibição de anúncios:</p>
         <ul>
             <li><strong>Dados Tratados pela Rede de Anúncios:</strong> O Google AdMob recolhe e processa o Identificador de Publicidade do dispositivo (GAID), endereço IP, dados técnicos de diagnóstico e interação com anúncios para fins de prevenção de fraudes e medição.</li>
             <li><strong>Formulário de Consentimento (Google UMP):</strong> Em regiões reguladas (como o EEE e Reino Unido), as preferências de privacidade e anúncios personalizados são recolhidas pelo formulário oficial da Google. O utilizador pode rever ou alterar o seu consentimento a qualquer momento acedendo a <em>Configurações &gt; Opções de Privacidade</em> dentro da aplicação.</li>
@@ -151,19 +140,10 @@
         </ul>
 
         <h2>4. Comunicação Offline P2P (Rede Mesh de Proximidade)</h2>
-        <p>O recurso de <strong>Chat SOS Offline</strong> utiliza o <em>Google Nearby Connections</em> por meio de rádio local (Bluetooth e Wi-Fi Direct):</p>
-        <ul>
-            <li>A comunicação é feita de dispositivo para dispositivo, sem depender de conexão com a internet.</li>
-            <li>Nenhum nó desconhecido é conectado sem o prévio handshake de autenticação e validação manual do código de emparelhamento pelo utilizador.</li>
-        </ul>
+        <p>O recurso de <strong>Chat SOS Offline</strong> utiliza o <em>Google Nearby Connections</em> por meio de rádio local (Bluetooth e Wi-Fi Direct) sem depender de conexão com a internet. Nenhum nó desconhecido é conectado sem o prévio handshake de autenticação e validação manual do código de emparelhamento pelo utilizador.</p>
 
         <h2>5. Bases Legais, Retenção e Direitos do Titular (LGPD / GDPR)</h2>
-        <ul>
-            <li><strong>Bases Legais:</strong> O tratamento de dados de localização baseia-se na <em>execução de contrato / prestação do serviço solicitado</em> pelo próprio utilizador. O tratamento de dados de publicidade baseia-se no <em>consentimento</em> prévio.</li>
-            <li><strong>Retenção dos Dados:</strong> Os seus percursos e waypoints são retidos localmente até que decida eliminá-los manualmente através da aplicação ou desinstalá-la.</li>
-            <li><strong>Direitos do Titular:</strong> O utilizador tem direito de acesso, correção, eliminação de dados locais e revogação de consentimento de anúncios a qualquer momento.</li>
-            <li><strong>Transferência Internacional:</strong> Os servidores dos serviços terceiros de meteorologia, mapas e anúncios encontram-se situados fora do território nacional (EUA e Europa), aplicando-se padrões técnicos seguros de encriptação TLS/HTTPS.</li>
-        </ul>
+        <p>O tratamento de dados de localização baseia-se na <em>execução de contrato / prestação do serviço</em> solicitado pelo próprio utilizador. O tratamento de dados de publicidade baseia-se no consentimento prévio. Os seus percursos e waypoints são retidos localmente até que decida eliminá-los manualmente através da aplicação ou desinstalá-la.</p>
 
         <h2>6. Proteção de Menores</h2>
         <p>Esta aplicação não é direcionada a crianças e não recolhe intencionalmente informações de menores de 13 anos.</p>
@@ -178,9 +158,9 @@
 
     <!-- CONTEÚDO EM INGLÊS -->
     <div id="content-en" class="tab-content">
-        <h1>Privacy Policy — GPS Bússola</h1>
+        <h1>Privacy Policy — Bússola GPS</h1>
         <span class="meta-tag">Last updated: October 2026</span>
-        <p>This Privacy Policy describes how <strong>GPS Bússola</strong> handles user data, in strict compliance with the General Data Protection Law (LGPD - Brazil), the European General Data Protection Regulation (GDPR), and Google Play Store Developer Policies.</p>
+        <p>This Privacy Policy describes how <strong>Bússola GPS</strong> handles user data, in strict compliance with the General Data Protection Law (LGPD - Brazil), the European General Data Protection Regulation (GDPR), and Google Play Store Developer Policies.</p>
 
         <div class="disclaimer-box">
             <strong>Emergency & Safety Disclaimer:</strong> This app provides compass navigation, solar calculations, GNSS telemetry, and offline P2P emergency beacons. These tools are secondary outdoor navigation aids and <strong>do not replace</strong> certified navigation equipment or official search and rescue channels.
@@ -197,7 +177,8 @@
         <p>To deliver real-time features, the app sends location coordinates and device IP addresses via secure HTTPS requests to specialized third-party providers:</p>
         <ul>
             <li><strong>Esri ArcGIS Location Platform:</strong> Cartographic tile rendering (World Topo, World Imagery, and 3D Hillshade).</li>
-            <li><strong>Open-Meteo:</strong> Hourly weather forecasts, marine waves, Copernicus DEM 30m terrain elevations, and geocoding search.</li>
+            <li><strong>WeatherAPI.com:</strong> Real-time weather conditions, hourly temperature and precipitation forecasts, and city geocoding search.</li>
+            <li><strong>Open-Meteo Elevation API:</strong> Terrain elevation model (Copernicus DEM 30m) for topographic altitude validation and calibration.</li>
             <li><strong>World Air Quality Index (WAQI / AQICN):</strong> Air quality ground-station validation.</li>
             <li><strong>Nominatim / OpenStreetMap:</strong> Reverse geocoding to resolve neighborhood and city names.</li>
             <li><strong>AviationWeather.gov (NOAA / NWS):</strong> Official aviation weather reports (METAR).</li>
@@ -230,9 +211,9 @@
 
     <!-- CONTEÚDO EM ESPANHOL -->
     <div id="content-es" class="tab-content">
-        <h1>Política de Privacidad — GPS Bússola</h1>
+        <h1>Política de Privacidad — Bússola GPS</h1>
         <span class="meta-tag">Última actualización: Octubre de 2026</span>
-        <p>Esta Política de Privacidad describe el tratamiento de datos del aplicativo <strong>GPS Bússola</strong>, de acuerdo con la LGPD brasileña, el Reglamento General de Protección de Datos (GDPR) y las normativas de Google Play Store.</p>
+        <p>Esta Política de Privacidad describe el tratamiento de datos del aplicativo <strong>Bússola GPS</strong>, de acuerdo con la LGPD brasileña, el Reglamento General de Protección de Datos (GDPR) y las normativas de Google Play Store.</p>
 
         <div class="disclaimer-box">
             <strong>Aviso de Seguridad y Emergencia:</strong> Esta aplicación ofrece brújula, cálculo solar, telemetría GNSS y balizas de emergencia P2P sin conexión. Estas herramientas son ayudas auxiliares de orientación y <strong>no sustituyen</strong> a los equipos homologados ni a los servicios oficiales de rescate y emergencias.
@@ -249,7 +230,8 @@
         <p>Para brindar datos en tiempo real, la aplicación realiza solicitudes HTTPS enviando las coordenadas del lugar consultado y la dirección IP a servicios de terceros:</p>
         <ul>
             <li><strong>Esri ArcGIS:</strong> Mapas topográficos, satelitales y relieve sombreado (Hillshade 3D).</li>
-            <li><strong>Open-Meteo:</strong> Pronósticos del tiempo, oleaje, elevación Copernicus DEM y búsqueda de localidades.</li>
+            <li><strong>WeatherAPI.com:</strong> Condiciones meteorológicas en tiempo real, pronósticos horarios de temperatura y lluvia, y búsqueda textual de localidades.</li>
+            <li><strong>Open-Meteo Elevation API:</strong> Modelo de elevación topográfica del terreno (Copernicus DEM 30m) para validación y calibración de altitud.</li>
             <li><strong>World Air Quality Index (WAQI):</strong> Validación de la calidad del aire con estaciones terrestres.</li>
             <li><strong>Nominatim / OpenStreetMap:</strong> Geocodificación inversa para identificar barrios y ciudades.</li>
             <li><strong>AviationWeather.gov:</strong> Informes meteorológicos aeronáuticos oficiales (METAR).</li>
